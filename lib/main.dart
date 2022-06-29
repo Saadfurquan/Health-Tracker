@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:healthapp/responsive/mobile_screen_layout.dart';
+import 'package:healthapp/responsive/responsive_screen_layout.dart';
+import 'package:healthapp/responsive/web_screen_layout.dart';
 import 'package:healthapp/utils/colors.dart';
 
 void main() {
@@ -17,7 +20,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: mobileBackgroundColor,
       ),
-      home: Scaffold(body: Text('Flutter Demo Home Page')),
+      home: const ReponsiveLayout(
+        mobileScreenLayout: MobileScreenLayout(),
+        webScreenLayout: WebScreenLayout(),
+      ),
     );
   }
 }
